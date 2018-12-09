@@ -3,10 +3,6 @@ import bs4
 import re
 
 
-def sort_on_second(a, b):
-    return cmp(a[1], b[1])
-
-
 class Node:
     def __init__(self, label=None, data={}):
         self.label = label
@@ -188,7 +184,7 @@ if __name__ == '__main__':
                 if found:
                     ranked_results.append([key1, value1])
 
-        ranked_results.sort(sort_on_second)
+        sorted(ranked_results, key = lambda s: s[1])
         print "#######\nFollowing results have been found : "
         for rr in ranked_results:
             print rr[0]
